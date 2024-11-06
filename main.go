@@ -84,7 +84,7 @@ func main() {
 	http.HandleFunc("/sentinelcallback", handleSentinelCallback)
 	http.HandleFunc("/auth0callback", handleAuth0Callback)
 
-	// Start the server on port 8080
+	// Start the server on port 3000
 	log.Println("Server is starting on port 3000...")
 	log.Fatal(http.ListenAndServe("localhost:3000", nil))
 }
