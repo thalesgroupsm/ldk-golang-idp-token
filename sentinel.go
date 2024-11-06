@@ -56,7 +56,7 @@ func handleSentinelCallback(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Token Type: %s\n", token.TokenType)
 	fmt.Fprintf(w, "Expiry: %s\n", token.Expiry)
 
-	// Validate the ID token
+	// Validate the Access token
 	parsedToken, err := validateToken(sentinelJwksURL, token.AccessToken)
 	if err != nil {
 		http.Error(w, fmt.Sprintf("Failed to validate ID token: %v", err), http.StatusInternalServerError)
