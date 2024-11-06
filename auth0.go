@@ -72,7 +72,7 @@ func handleAuth0Callback(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Invalid ID token", http.StatusInternalServerError)
 	}
 
-	// Validate the ID token
+	// Validate the Access token
 	parsedAccessToken, err := validateToken(auth0JwksURL, token.AccessToken)
 	if err != nil {
 		http.Error(w, fmt.Sprintf("Failed to validate access token: %v", err), http.StatusInternalServerError)
